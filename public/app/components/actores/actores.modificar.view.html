@@ -1,13 +1,20 @@
 <h1>Modificar actor</h1>
 
+<form name="myForm" ng-model="consultar()">
+	<label for="repeatSelect">Seleccione un actor: </label>
+	<select ng-model="actoresCtrl.actor">
+	  <option ng-repeat="option in actoresCtrl.actores" ng-value="{{option.nombre}}">{{option.name}}</option>
+	</select>
+</form>
+
 <div class="container">
-  <form ng-submit="actoresCtrl.modificarActor(actorData)">
-    <input type="text" name="nombre" placeholder="nombre" ng-model="actoresCtrl.actorData.nombre">
-    <input type="text" name="apellido1" placeholder="apellido1" ng-model="actoresCtrl.actorData.ape1">
-    <input type="text" name="apellido2" placeholder="apellido2" ng-model="actoresCtrl.actorData.ape2">
-    <input type="text" name="premios" placeholder="cantidad de premios" ng-model="actoresCtrl.actorData.premios">
-    <input type="text" name="fechaNac" placeholder="fecha de nacimiento" ng-model="actoresCtrl.actorData.fechaNac">
-    <input type="text" name="imagen" placeholder="imagen" ng-model="actoresCtrl.actorData.image">
+  <form ng-submit="actoresCtrl.modificarActor(actor)">
+    <input type="text" name="nombre" placeholder="nombre" ng-model="actoresCtrl.actor.nombre">
+    <input type="text" name="apellido1" placeholder="apellido1" ng-model="actoresCtrl.actor.ape1">
+    <input type="text" name="apellido2" placeholder="apellido2" ng-model="actoresCtrl.actor.ape2">
+    <input type="text" name="premios" placeholder="cantidad de premios" ng-model="actoresCtrl.actor.premios">
+    <input type="text" name="fechaNac" placeholder="fecha de nacimiento" ng-model="actoresCtrl.actor.fechaNac">
+    <input type="text" name="imagen" placeholder="imagen" ng-model="actoresCtrl.actor.image">
     <button type="submit">Modificar</button>
   </form>
 </div>
