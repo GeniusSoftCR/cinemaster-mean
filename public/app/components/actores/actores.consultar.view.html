@@ -1,6 +1,6 @@
 <h1>Consultar actor</h1>
 
-<form name="myForm" ng-model="consultar(actorData)">
+<form name="myForm" ng-model="consultar()">
 	<label for="repeatSelect">Seleccione un actor: </label>
 	<select ng-model="actoresCtrl.actor">
 	  <option ng-repeat="option in actoresCtrl.actores" ng-value="{{option.nombre}}">{{option.name}}</option>
@@ -18,13 +18,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="actor in actoresCtrl.actores">
-        <td>{{actoresCtrl.actor.nombre}}</td>
-        <td>{{actoresCtrl.actor.ape1}}</td>
-        <td>{{actoresCtrl.actor.ape2}}</td>
-        <td>{{actoresCtrl.actor.premios}}</td>
-        <td>{{actoresCtrl.actor.fechaNa}}</td>
-        <td>{{actoresCtrl.actor.iamge}}</td>
+    <tr>
+        <td>{{actor.nombre}}</td>
+        <td>{{actor.ape1}}</td>
+        <td>{{actor.ape2}}</td>
+        <td>{{actor.premios}}</td>
+        <td>{{actor.fechaNa}}</td>
+        <td>{{actor.image}}</td>
     </tr>
   </tbody>
 </table>

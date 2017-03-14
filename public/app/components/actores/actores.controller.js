@@ -40,7 +40,7 @@ function actorController ($http, $location, $timeout, actorService, ImageService
     });
   };
 
-  this.consultarActor = function (actorData) {
+  this.consultarActor = function () {
     //primero se cargan los actores persistidos en el modelo
     traerActores();
   };
