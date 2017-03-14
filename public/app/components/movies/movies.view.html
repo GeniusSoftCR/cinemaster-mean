@@ -1,0 +1,20 @@
+<h1>Crear pelicula</h1>
+
+<div class="container">
+  <form ng-submit="peliculaCtrl.regMovie(movieData)">
+    <input type="text" name="nombre" placeholder="Titulo" ng-model="peliculaCtrl.movieData.name">
+    <input type="text" name="genero" placeholder="Genero" ng-model="peliculaCtrl.movieData.genre">
+    <input type="text" name="year" placeholder="Año" ng-model="peliculaCtrl.movieData.year">
+    <input type="text" name="image" placeholder="Imagen" ng-model="peliculaCtrl.movieData.image">
+    <button type="submit"> Enviar</button>
+  </form>
+  <div ng-show="peliculaCtrl.loading">
+    <p>loading...</p>
+  </div>
+  <div class="show-hide-message" ng-show="peliculaCtrl.successMsg">
+    <div class="alert alert-success">{{ peliculaCtrl.successMsg }}</div>
+  </div>
+  <div class="show-hide-message" ng-show="peliculaCtrl.errorMsg">
+    <div class="alert alert-danger">{{ peliculaCtrl.errorMsg }}</div>
+  </div>
+</div>
