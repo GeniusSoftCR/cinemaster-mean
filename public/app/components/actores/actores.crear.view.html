@@ -1,0 +1,22 @@
+<h1>Crear actor</h1>
+
+<div class="container">
+  <form ng-submit="actoresCtrl.registrarActor(actorData)">
+    <input type="text" name="nombre" placeholder="nombre" ng-model="actoresCtrl.actorData.nombre">
+    <input type="text" name="apellido1" placeholder="apellido1" ng-model="actoresCtrl.actorData.ape1">
+    <input type="text" name="apellido2" placeholder="apellido2" ng-model="actoresCtrl.actorData.ape2">
+    <input type="text" name="premios" placeholder="cantidad de premios" ng-model="actoresCtrl.actorData.premios">
+    <input type="text" name="fechaNac" placeholder="fecha de nacimiento" ng-model="actoresCtrl.actorData.fechaNac">
+    <input type="text" name="imagen" placeholder="imagen" ng-model="actoresCtrl.actorData.image">
+    <button type="submit"> Enviar</button>
+  </form>
+  <div ng-show="actoresCtrl.loading">
+    <p>loading...</p>
+  </div>
+  <div class="show-hide-message" ng-show="actoresCtrl.successMsg">
+    <div class="alert alert-success">{{ actoresCtrl.successMsg }}</div>
+  </div>
+  <div class="show-hide-message" ng-show="actoresCtrl.errorMsg">
+    <div class="alert alert-danger">{{ actoresCtrl.errorMsg }}</div>
+  </div>
+</div>
