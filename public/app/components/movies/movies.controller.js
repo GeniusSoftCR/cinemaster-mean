@@ -12,11 +12,11 @@ function movieController ($http, $location, $timeout, movieService, ImageService
     movieCtrl.loading = true;
     movieCtrl.errorMsg = false;
     //localhost:3000/api/peliculas/nueva
-    movieService.crear(movieCtrl.movieData).then(function(data){
-      if(data.data.success) {
+    movieService.crear(movieCtrl.movieData).then(function(info){
+      if(info.data.success) {
         movieCtrl.loading = false;
         //creamos success
-        movieCtrl.successMsg = data.data.message;
+        movieCtrl.successMsg = info.data.message;
         //Redirect
         // $timeout(function(){
         //   $location.path('/');
@@ -26,9 +26,10 @@ function movieController ($http, $location, $timeout, movieService, ImageService
         movieCtrl.movieData.genre = null;
         movieCtrl.movieData.image = null;
       } else {
+        console.log(info);
         movieCtrl.loading = false;
         //create error message
-        movieCtrl.errorMsg = data.data.message;
+        movieCtrl.errorMsg = info.data.message;
       }
     });
   };

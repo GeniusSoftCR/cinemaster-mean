@@ -13,6 +13,7 @@ var movieSchema = new Schema({
   year:   String,
   image:   String
 }, {collection: 'movies'});
+
 //Creamos el modelo.
 var Movie = mongoose.model('Movie', movieSchema);
 
@@ -24,7 +25,7 @@ router.get('/movies', function(req, res, next) {
 });
 
 //localhost:3000/api/peliculas/nueva
-//Creamos una pelicula por el api
+//Creamos una pelicula por el api .put actualizar .delete eliminar
 router.post('/movies/new', function(req, res, next) {
   var movie = new Movie();
   movie.name = req.body.name;

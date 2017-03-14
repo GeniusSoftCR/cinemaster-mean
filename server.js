@@ -14,6 +14,7 @@ var dburl = 'mongodb://andres:1323@ds129090.mlab.com:29090/cines';
 
 //we define mongoose connection
 mongoose.connect(dburl);
+
 //We check BD connection
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

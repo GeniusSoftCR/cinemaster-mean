@@ -5,7 +5,6 @@
   function movieService($http){
 
     this.crear = function (newMovie) {
-      console.log(newMovie);
       return $http.post('/api/movies/new', newMovie);
     };
     this.obtener = function() {
