@@ -27,6 +27,7 @@ db.once('open', function() {
 var index = require('./server/index');
 var movies = require('./server/model/movies/movies-api');
 var users = require('./server/model/users/user-api');
+var actors = require('./server/model/actors/actors-api');
 
 //Set static Folder
 app.use(express.static(path.join(__dirname, '/public')));
@@ -39,6 +40,7 @@ app.use(morgan('dev'));
 //Define Express Routes
 app.use('/api', movies);
 app.use('/api', users);
+app.use('/api', actors);
 app.use('/', index);
 
 //Listen Server
