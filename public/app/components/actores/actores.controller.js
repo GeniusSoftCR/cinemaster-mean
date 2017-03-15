@@ -2,25 +2,26 @@
 'use strict';
 angular.module('cineApp').controller('actoresCtrl', actorController);
 
-function actorController ($http, $location, $timeout, actorService, ImageService, Upload) {
+function actorController ($http, $location, $timeout, actoresService, ImageService, Upload) {
   var actoresCtrl = this;
 
+  actoresCtrl.actores = actoresService.obtener();
   function init() {
     //cargar actores
   }
 
   this.traerActores = function() {
-    actoresCtrl.actores = actorService.obtener();
+    actoresCtrl.actores = actoresService.obtener();
   };
 
-  this.registrarActor = function (actorData) {
+  this.registrarActor = function () {
     actoresCtrl.loading = true;
     actoresCtrl.errorMsg = false;
     //localhost:3000/api/peliculas/crear
     //1ro: invoca la función de crear nuevo actor
     //2do: si el resultado es "positivo" muestra mensanje de exito y limpia el formulario
     //3ro: si el resultado es "negativo" muestra mensaje de fracaso
-    actorService.crear(actoresCtrl.actorData).then(function(info){
+    actoresService.crear(actoresCtrl.actorData).then(function(info){
       if(info.data.success) {
         actoresCtrl.loading = false;
         //creamos success

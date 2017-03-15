@@ -5,6 +5,13 @@
 
   function actoresService($http){
 
+    var actores = [
+    {
+      nombre: "Hecto",
+      ape: "Murillo",
+    }
+    ]
+
     this.crear = function (newActor) {
       return $http.post('/api/actores/new', newActor);
     };

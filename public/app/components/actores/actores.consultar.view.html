@@ -3,7 +3,7 @@
 <form name="myForm" ng-model="consultar()">
 	<label for="repeatSelect">Seleccione un actor: </label>
 	<select ng-model="actoresCtrl.actor">
-	  <option ng-repeat="option in actoresCtrl.actores" ng-value="{{option.nombre}}">{{option.name}}</option>
+	  <option ng-repeat="actor in actoresCtrl.actores" ng-value="{{actor.nombre}}">{{actor.nombre}}</option>
 	</select>
 </form>
 <table id="tblActor">
