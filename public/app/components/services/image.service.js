@@ -6,9 +6,9 @@
   function ImageService($http){
 
     var cloudObj = {
-      url:'https://api.cloudinary.com/v1_1/costa-rica',
+      url:'https://api.cloudinary.com/v1_1/dy2akw6ac/image/upload',
       data:{
-        upload_preset: 'd4cdndqv',
+        upload_preset: 'uaubd2qn',
         tags:'Any',
         context:'photo=test'
       }

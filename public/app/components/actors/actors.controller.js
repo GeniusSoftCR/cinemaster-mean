@@ -4,14 +4,34 @@ angular.module('cineApp').controller('actorCtrl', actorController);
 function actorController ($http, $location, $timeout, actorService, ImageService, Upload) {
   var actorCtrl = this;
 
+  actorCtrl.cloudObj = ImageService.getConfiguration();
+
   function init() {
   }
 
-  this.regActor = function (actorData) {
+  this.preSave = function(){
+        actorCtrl.cloudObj.data.file = document.getElementById("photo").files[0];
+        Upload.upload(actorCtrl.cloudObj)
+          .success(function(data){
+            actorCtrl.save(data.url);
+          });
+      }
+
+  this.save = function (pUrl) {
+    console.log(pUrl);
+
+    var newActor ={
+          name : actorCtrl.name,
+          lastName : actorCtrl.lastName,
+          birthday : actorCtrl.birthday,
+          awards : actorCtrl.awards,
+          image: pUrl
+        }
+
     actorCtrl.loading = true;
     actorCtrl.errorMsg = false;
     //localhost:3000/api/peliculas/nueva
-    actorService.crear(actorData)
+    actorService.crear(newActor)
 
     .then(function(info){
       if(info.data.success) {
@@ -22,10 +42,11 @@ function actorController ($http, $location, $timeout, actorService, ImageService
         // $timeout(function(){
         //   $location.path('/');
         // }, 2000);
-        actorData.name = null;
-        actorData.year = null;
-        actorData.genre = null;
-        actorData.image = null;
+        actorCtrl.actorData.name = null;
+        actorCtrl.actorData.lastName = null;
+        actorCtrl.actorData.birthday = null;
+        actorCtrl.actorData.awards = null;
+        actorCtrl.actorData.image = null;
       } else {
         console.log(info);
         actorCtrl.loading = false;
