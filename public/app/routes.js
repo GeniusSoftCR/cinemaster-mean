@@ -6,20 +6,15 @@ angular.module('appRoutes', ['ngRoute'])
     controller: 'moviesCtrl',
     controllerAs: 'peliculaCtrl'
   })
-  $routeProvider.when('/actores/crear', {
-    templateUrl: 'app/components/actores/actores.view.html',
-    controller: 'actoresCtrl',
-    controllerAs: 'actoresCtrl'
+  $routeProvider.when('/actors/consult', {
+    templateUrl: 'app/components/actors/consult/consult.view.html',
+    controller: 'consultCtrl',
+    controllerAs: 'consultCtrl'
   })
-  $routeProvider.when('/actores/consultar', {
-    templateUrl: 'app/components/actores/actores.consultar.view.html',
-    controller: 'actoresCtrl',
-    controllerAs: 'actoresCtrl'
-  })
-  $routeProvider.when('/actores/modificar', {
-    templateUrl: 'app/components/actores/actores.modificar.view.html',
-    controller: 'actoresCtrl',
-    controllerAs: 'actoresCtrl'
+  $routeProvider.when('/actors/modify', {
+    templateUrl: 'app/components/actors/modify/modify.view.html',
+    controller: 'modifyCtrl',
+    controllerAs: 'modifyCtrl'
   })
   .otherwise({ redirectTo: '/'});
 
