@@ -10,10 +10,6 @@
     this.obtener = function() {
       return $http.get('/api/movies');
     };
-
-    this.eliminar = function(_id) {
-      return $http.delete('/api/movies/'+_id);
-    }
   }
 
 })();
