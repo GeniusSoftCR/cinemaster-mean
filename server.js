@@ -10,7 +10,11 @@ var mongoose = require('mongoose');
 //We define app variables
 var app = express();
 var port = 3000;
-var dburl = 'mongodb://andres:1323@ds129090.mlab.com:29090/cines';
+var dburl = 'mongodb://geniussoft:proyectoweb1@ds133290.mlab.com:33290/cinemaster';
+
+//mongodb://geniussoft:proyectoweb1@ds133290.mlab.com:33290/cinemaster
+//mongodb://andres:1323@ds129090.mlab.com:29090/cines
+
 
 //we define mongoose connection
 mongoose.connect(dburl);

@@ -6,9 +6,9 @@
   function ImageService($http){
 
     var cloudObj = {
-      url:'https://api.cloudinary.com/v1_1/dy2akw6ac/image/upload',
+      url:'https://api.cloudinary.com/v1_1/genius-soft/image/upload',
       data:{
-        upload_preset: 'uaubd2qn',
+        upload_preset: 'genius-soft',
         tags:'Any',
         context:'photo=test'
       }
