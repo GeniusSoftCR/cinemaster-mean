@@ -1,12 +1,12 @@
 <h1>Crear pelicula</h1>
 
 <div class="container">
-  <form ng-submit="peliculaCtrl.regMovie(movieData)">
+  <form>
     <input type="text" name="nombre" placeholder="Titulo" ng-model="peliculaCtrl.movieData.name">
     <input type="text" name="genero" placeholder="Genero" ng-model="peliculaCtrl.movieData.genre">
     <input type="text" name="year" placeholder="Año" ng-model="peliculaCtrl.movieData.year">
-    <input type="text" name="image" placeholder="Imagen" ng-model="peliculaCtrl.movieData.image">
-    <button type="submit"> Enviar</button>
+    <input type="file" name="image" id="photo" placeholder="Imagen" ng-model="peliculaCtrl.movieData.image">
+    <a href="javascript:;" ng-click="peliculaCtrl.preSave()"> Enviar</a>
   </form>
   <div ng-show="peliculaCtrl.loading">
     <p>loading...</p>
@@ -16,5 +16,18 @@
   </div>
   <div class="show-hide-message" ng-show="peliculaCtrl.errorMsg">
     <div class="alert alert-danger">{{ peliculaCtrl.errorMsg }}</div>
+  </div>
+  <div class="peliculas">
+    <table>
+      <tr ng-repeat="movie in movies">
+        <td>{{ movie._id }}</td>
+        <td>{{ movie.name }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ movie.genre }}</td>
+        <td><img style="max-width: 150px;" src="{{ movie.image }}" alt="{{ movie.name }}"></td>
+        <td><a href="javascript:;" ng-click="peliculaCtrl.delete($index)">Delete</a></td>
+        <td><a href="javascript:;">Modify</a></td>
+      </tr>
+    </table>
   </div>
 </div>
