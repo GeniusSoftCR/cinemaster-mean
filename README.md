@@ -1,10 +1,14 @@
 # cineMaster-MEAN
 
-#Setup
+## Usage
 
+```sh
+# install nodemon
 (sudo) npm install -g nodemon
 
+# install npm dependencies
+npm install && bower install
 
-#Run
-In proyect fule run
+# run it (in your proyect file)
 nodemon
+```
