@@ -24,6 +24,7 @@ Thumbs.db
 # Dependency directories
 node_modules
 jspm_packages
+public/assets/vendor
 
 # Optional npm cache directory
 .npm

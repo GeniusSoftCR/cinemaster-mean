@@ -13,6 +13,8 @@ var usersSchema = new Schema({
   password: {type: String, required: true, unique: true},
   email: {type: String, required: true, unique: true}
 }, {collection: 'users'});
+
+
 //Creamos el modelo.
 var User = mongoose.model('User', usersSchema);
 
@@ -39,6 +41,31 @@ router.post('/users/new', function(req, res, next) {
     }
   });
 });
+
+
+var cinemaTypeSchema = new Schema({
+  name : {type:String, required:true}
+},{collection: 'cinemaTypes'});
+
+var cinemaType = mongoose.model('cinemaType', cinemaTypeSchema);
+
+router.post('/cinema/new', function(req, res, next) {
+  var cinemaTypeNew = new cinemaType();
+
+  cinemaTypeNew.name ="normal";
+
+  cinemaTypeNew.save(function(err){
+    if (err) {
+      res.json({success: false, message: 'Ha ocurrido un error'});
+    } else {
+      res.json({success: true, message: 'Se ha enviado el usuario correctamente'});
+    }
+  });
+});
+
+
+
+
 
 //module router -- we specify this to declare to server
 module.exports = router;
