@@ -9,7 +9,7 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "public/assets/vendor"
+    "public/assets/vendor",
     "node_modules",
     "bower_components",
     "test",
