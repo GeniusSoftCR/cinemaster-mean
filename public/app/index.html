@@ -4,38 +4,54 @@
   <base href="/">
   <meta charset="UTF-8">
   <title>CineMaster</title>
-
+  <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/css/main.css">
   <!-- bower:css -->
   <!-- endbower -->
 </head>
-<body ng-app="cineApp"> 
-  <div ng-view></div>
+<body ng-app="cineApp">
+  
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Cinemaster</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li ui-sref-active="active"><a ui-sref="admin.peliculas">Peliculas</a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.actores">Actores</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <section class="container">
+    <div ui-view></div>
+  </section>
+  
   <!-- bower:js -->
+  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="assets/vendor/angular/angular.js"></script>
   <script src="assets/vendor/ng-file-upload/ng-file-upload.js"></script>
-  <script src="assets/vendor/angular-route/angular-route.js"></script>
+  <script src="assets/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
   <!-- endbower -->
-  <!-- angular -->
-
-
-
-
+  
+  <script src="assets/vendor/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <!-- angular -->
   <script src="app/app.js"></script>
   <script src="app/routes.js"></script>
 
-  <!-- ImageServices -->
+  <!-- Services -->
   <script src="app/components/services/image.service.js"></script>
-
-  <!-- Main -->
-  <script src="app/components/main/main.controller.js"></script>
-
-  <!-- Movies -->
-  <script src="app/components/movies/movies.controller.js"></script>
-  <script src="app/components/movies/movies.service.js"></script>
-
-  <!-- Actor -->
-  <script src="app/components/actors/actors.controller.js"></script>
-  <script src="app/components/actors/actors.service.js"></script>
 
 </body>
 </html>

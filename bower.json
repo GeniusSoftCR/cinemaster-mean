@@ -3,7 +3,8 @@
   "description": "",
   "main": "server.js",
   "authors": [
-    "Andres Castillo <aazcast@gmail.com>","Hector Murillo <hmurillop@gmail.com>"
+    "Andres Castillo <aazcast@gmail.com>",
+    "Hector Murillo <hmurillop@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "",
@@ -18,6 +19,8 @@
   "dependencies": {
     "angular": "^1.6.3",
     "ng-file-upload": "^12.2.13",
-    "angular-route": "^1.6.3"
+    "angular-ui-router": "^0.4.2",
+    "oclazyload": "^1.1.0",
+    "bootstrap": "^3.3.7"
   }
 }
