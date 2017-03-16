@@ -10,6 +10,11 @@
         controller: 'mainCtrl',
         controllerAs: 'mainCtrl'
       }) 
+      .when('/admin', {
+        templateUrl: 'app/components/admin/admin.view.html',
+        controller: 'adminCtrl',
+        controllerAs: 'adminCtrl'
+      })       
       .when('/peliculas/crear', {
         templateUrl: 'app/components/movies/movies.view.html',
         controller: 'moviesCtrl',
